@@ -450,6 +450,18 @@ h1 {
 .web-layout .footer a:hover {
   text-decoration: underline;
 }
+/* Map
+=======================*/
+.map-wrap {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+#map {
+  width: 100%;
+  height: 100%;
+}
 /* include style
 ==================*/
 .header {
