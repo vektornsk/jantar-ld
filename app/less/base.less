@@ -10,7 +10,11 @@
 @monospace: "Bitstream Vera Sans Mono", "Consolas", "Courier", monospace;
 @verdana: "Verdana", "Geneva", sans-serif;
 
-
+@txt-pt_sans-regular: 'pt_sans-regular', sans-serif;
+@txt-GothaProReg: 'GothaProReg', sans-serif;
+@txt-GothaProLight: 'GothamProLight', sans-serif;
+@txt-GothaProMedium: 'GothamProMedium', sans-serif;
+@color-yellow: #ffc22c;
 // ========== Basic styles ==========
 
 html {
@@ -33,11 +37,15 @@ body {
 	width: 100%;
 	min-width: 320px;
 	height: 100%;
-	font-size: 16px;
-	font-family: sans-serif;
+	font-size: 14px;
+	font-family: @txt-pt_sans-regular;
 }
 
 p {
+	color: #fff;
+	font-size: 24px;
+	line-height: 1.5;
+	font-weight: 400;
 	margin-bottom: 36px;
 }
 
@@ -122,28 +130,27 @@ input[type="search"]::-webkit-search-decoration {
 }
 
 .cf {
-	zoom: 1; 
-	
+	zoom: 1;
+
 	&:before, &:after {
 		content: "";
 		display: table;
 	}
-	
+
 	&:after {
 		clear:both;
 	}
 }
 
-.hidden, 
+.hidden,
 [hidden] {
 	display: none !important;
 }
 
-.img-adp, 
+.img-adp,
 .iframe-adp {
 	max-width: 100%;
 	height: auto;
 	display: block;
 	margin: auto;
 }
-

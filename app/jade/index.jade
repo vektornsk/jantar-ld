@@ -2,9 +2,97 @@ extends ./tmp/_template.jade
 block title
     title Главная
 block content
-    #fullpage
-        .section.bg-index
+    +header()
+    #fullpage         
+        .section.bg-index.about
           .container
-            +header
+            .center
+              h1 Сеть автомоек и АЗС в Новосибирске «Янтарь»
+              p  Компания «Янтарь» существует на рынке автомобильных услуг с 1998 года. С самого начала своей деятельности, качество услуг и уровень сервиса ыли приоритетными направлениями в работе компании. С того момента мы приобрели большой опыт в сфере обслуживания автотранспорта.
+          .arrowe
+        .section.bg-index.azc
+          .container
+            .center
+              h1 Азс
+              .azc__wrap 
+                img.azc__img(src="/images/icons/azc.svg")
+                span.azc__text Своим клиентам мы предоставляем на выбор следующие виды&nbsp;топлива:
+              div.azc__benz 
+                span ДТ 
+                span 92 
+                span 95 
+                span 98
+            .gzp
+              img.gzp__img(src='/images/gazprom.png')
+              span Официальный поставщик топлива для сети АЗС «Янтарь» 
+          .arrowe
+        .section.bg-index.services-layout
+          .container     
+            .center
+              p  На данный момент в Новосибирске работают 3 первоклассные автомойки «Янтарь»,<br>предоставляющие комплекс услуг по уходу за внешним видом автомобиля:
+              .services-wrap
+                .left
+                  ul.services
+                    li
+                      img(src='/images/icons/bucket.svg')
+                      span Безопасная мойка кузова
+                    li
+                      img(src='/images/icons/mop.svg')
+                      span Мойка двигателя с диэлектриком
+                    li
+                      img(src='/images/icons/blob.svg')
+                      span Твердый воск
+                .right
+                  ul.services
+                    li
+                      img(src='/images/icons/blob.svg')
+                      span Химчистка «Торнадор»
+                    li
+                      img(src='/images/icons/bucket.svg')
+                      span Восстановительная полировка
+                    li
+                      img(src='/images/icons/mop.svg')
+                      span Нанопокрытия
+              div И многие другие
+          .arrowe
+        .section.bg-gray.equipment
+          .container
+            .center
+              p При оборудовании автомоек мы сделали ставку на качество оборудования и расходных материалов.
+          .arrowe        
+        .section.bg-index.client
+          .container
+            .center
+              p Свои автомобили нам доверило множество компаний:
+          .arrowe
+        .section.bg-wash.wash
+          .container
+            .center
+              p Попасть на автомойку без очереди можно предварительно записавшись:
+              button.button-popup
+                span Записаться на мойку
+          .arrowe
+        .section.bg-card.ambercard
+          .container
+            .center
+              p В ближайшем будущем все наши продукты мы объединим в бонусную систему «AMBERCARD».*
+            .note
+              span *Получить бонусную карту можно будет на любой автомойке или АЗС группы компаний «Янтарь»
+          .arrowe
+        .section.bg-index.web-layout
+          .container
+            .center
+              .web
+                .left
+                  p Совсем скоро мы представим новый сайт с возможностью онлайн записи на обслуживание вашего автомобиля.
+                .right
+                  img(src="/images/adaptive-phone.png")
+            .footer
+              span © 2016, ООО «Янтарь» 
+              span.copy Все права защищены.
+              a(href="http://machineheads.ru/") Разработка сайта: 
+                span Machineheads
+          .arrowe
+              
 
 block hidden
