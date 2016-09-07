@@ -28,5 +28,13 @@
     "watch": "^0.19.2"
   },
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vektornsk/jantar-ld.git"
+  },
+  "bugs": {
+    "url": "https://github.com/vektornsk/jantar-ld/issues"
+  },
+  "homepage": "https://github.com/vektornsk/jantar-ld#readme",
   "description": ""
 }

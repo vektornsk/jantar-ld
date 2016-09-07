@@ -2,10 +2,39 @@ $(function() {
 	/*page scroll*/
 	$('#fullpage').fullpage({
 		anchors: ['s1', 's2', 's3', 's4', 's5', 's6', 's7', 's8', 's9'],
-		menu: '#nav'
+		menu: '#nav',
+		afterLoad: function(menuanchor){
+			logo();
+			opacity(menuanchor);
+		}
 	});
-	/*carusel*/
 
+	/* list menu - opasity*/
+	function opacity(menuanchor){
+		var
+		$nav = $('#nav'),
+		$mass = $('#nav').find('[data-menuanchor]'),
+		$currentEl = $nav.find('.active'),
+		curIndex = $currentEl.index();
+		$mass.css('opacity',1);
+
+		for(i=0;i<curIndex;i++){
+			$mass.eq(curIndex-i-1).css('opacity',(100 - (i+1) * 10)/100 );
+		}
+		for(i=curIndex+1;i<$mass.length;i++){
+			$mass.eq(i).css('opacity',(100 - (i-curIndex) * 10)/100 );
+		}
+	}
+	
+	/*carusel*/
+	/*logo*/
+	function logo() {
+		if ($('.section.azc').hasClass('active')){
+			$('.logo__img').attr('src','/images/icons/logo-black.svg')
+		}else {
+			$('.logo__img').attr('src','/images/icons/logo.svg')
+		}
+	}
 	/*map*/
 		var pos1 = new google.maps.LatLng(54.99579461, 82.96729642);
 		var pos2 = new google.maps.LatLng(55.01015989, 82.87607662);
