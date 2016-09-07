@@ -38,8 +38,7 @@ gulp.task('jade', function(){
 gulp.task('scripts', function(){
 	return gulp.src([
 		'app/libs/jquery/dist/jquery.min.js',
-		'app/libs/fullpage.js/dist/jquery.fullpage.js',
-		'app/libs/Carousel/3dcarousel.js'
+		'app/libs/fullpage.js/dist/jquery.fullpage.js'
 	])
 		.pipe(concat('libs.js'))
 		.pipe(uglify())
@@ -48,8 +47,7 @@ gulp.task('scripts', function(){
 // CSS
 gulp.task('libcss', function(){
 	return gulp.src([
-		'app/libs/fullpage.js/dist/jquery.fullpage.css',
-		'app/libs/Carousel/style.css'
+		'app/libs/fullpage.js/dist/jquery.fullpage.css'
 	])
 	.pipe(concat('libs-style.css'))
 	.pipe(gulp.dest('app/css'))

@@ -39,6 +39,7 @@ html {
   -webkit-box-sizing: inherit;
   box-sizing: inherit;
   outline: none;
+  font-family: 'pt_sans-regular', sans-serif;
 }
 body {
   width: 100%;
@@ -370,6 +371,10 @@ h1 {
 }
 /* Клиенты
 ========================*/
+.client .center {
+  width: 28.08%;
+  text-align: center;
+}
 /* Wash
 ========================*/
 .wash .center {
@@ -452,16 +457,12 @@ h1 {
 }
 /* Map
 =======================*/
-.map-wrap {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-}
 #map {
   width: 100%;
   height: 100%;
 }
+/* Carusel
+========================*/
 /* include style
 ==================*/
 .header {
@@ -518,6 +519,21 @@ h1 {
     width: 1200px;
     padding: 0;
   }
+}
+#nav {
+  position: absolute;
+  z-index: 99;
+  top: 139px;
+  left: 53px;
+}
+#nav li {
+  font-family: 'GothamProLight', sans-serif;
+  margin-bottom: 20px;
+}
+#nav li a {
+  color: #fff;
+  font-size: 18px;
+  line-height: 1.11;
 }
 /* media
 ==================*/

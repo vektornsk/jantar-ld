@@ -3,14 +3,42 @@ block title
     title Главная
 block content
     +header()
+    ul#nav
+      li.activ(data-menuanchor="s1")
+        a(href="#s1")
+          span О нас
+      li(data-menuanchor="s2")
+        a(href="#s2")
+          span АЗС
+      li(data-menuanchor="s3")
+        a(href="#s3")
+          span Услуги
+      li(data-menuanchor="s4")
+        a(href="#s4")
+          span Оборудование
+      li(data-menuanchor="s5")
+        a(href="#s5")
+          span Клиент
+      li(data-menuanchor="s6")
+        a(href="#s6")
+          span Автомойка
+      li(data-menuanchor="s7")
+        a(href="#s7")
+          span AMBERCARD
+      li(data-menuanchor="s8")
+        a(href="#s8")
+          span Веб сайт
+      li(data-menuanchor="s9")
+        a(href="#s9")
+          span Карта
     #fullpage         
-        .section.bg-index.about
+        .section.bg-index.about(data-anchor="s1")
           .container
             .center
               h1 Сеть автомоек и АЗС в Новосибирске «Янтарь»
               p  Компания «Янтарь» существует на рынке автомобильных услуг с 1998 года. С самого начала своей деятельности, качество услуг и уровень сервиса ыли приоритетными направлениями в работе компании. С того момента мы приобрели большой опыт в сфере обслуживания автотранспорта.
           .arrowe
-        .section.bg-index.azc
+        .section.bg-index.azc(data-anchor="s2")
           .container
             .center
               h1 Азс
@@ -64,6 +92,18 @@ block content
           .container
             .center
               p Свои автомобили нам доверило множество компаний:
+            #perspective
+              #carousel
+                figure
+                  img(src='/images/logos/danone.png', alt="danone")
+                figure
+                  img(src='/images/logos/gazprom.png', alt="gazprom")
+                figure
+                    img(src='/images/logos/metro.png', alt="metro") 
+                figure
+                    img(src='/images/logos/sber.png', alt="sber")
+                figure
+                    img(src='/images/logos/unicredit.png', alt="unicredit")               
           .arrowe
         .section.bg-wash.wash
           .container
@@ -94,7 +134,6 @@ block content
                 span Machineheads
           .arrowe
         .section.mapp-layout
-          .map-wrap
           #map
               
 

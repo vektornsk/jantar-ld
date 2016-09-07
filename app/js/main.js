@@ -1,6 +1,11 @@
 $(function() {
 	/*page scroll*/
-	$('#fullpage').fullpage();
+	$('#fullpage').fullpage({
+		anchors: ['s1', 's2', 's3', 's4', 's5', 's6', 's7', 's8', 's9'],
+		menu: '#nav'
+	});
+	/*carusel*/
+
 	/*map*/
 		var pos1 = new google.maps.LatLng(54.99579461, 82.96729642);
 		var pos2 = new google.maps.LatLng(55.01015989, 82.87607662);
@@ -15,7 +20,8 @@ $(function() {
 		var mapOptions = {
 		zoom: 13,
 		center: mapCenter,
-		mapTypeId: google.maps.MapTypeId.ROADMAP
+		mapTypeId: google.maps.MapTypeId.ROADMAP,
+		scrollwheel: false
 		}
 		var map = new google.maps.Map(document.getElementById("map"), mapOptions);
 
