@@ -25,11 +25,11 @@ $(function() {
 			$mass.eq(i).css('opacity',(100 - (i-curIndex) * 10)/100 );
 		}
 	}
-	
+
 	/*carusel*/
 	/*logo*/
 	function logo() {
-		if ($('.section.azc').hasClass('active')){
+		if ($('.section.azc').hasClass('active') || $('.section.map-layout').hasClass('active')){
 			$('.logo__img').attr('src','/images/icons/logo-black.svg')
 		}else {
 			$('.logo__img').attr('src','/images/icons/logo.svg')
