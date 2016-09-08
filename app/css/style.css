@@ -464,13 +464,11 @@ h1 {
 /* Carusel
 ========================*/
 #carousel {
-  width: 650px;
+  width: 80%;
   margin: 0 auto;
-  padding-left: 20px;
 }
 #carousel li {
   position: relative;
-  margin-right: 20px;
   height: 90px;
 }
 #carousel li img {
@@ -480,6 +478,14 @@ h1 {
   right: 0;
   bottom: 0;
   margin: auto;
+}
+/* tooltip
+=========================*/
+.tooltip {
+  border: thin 1px #eee;
+  background-color: #FFFBF0;
+  padding: 5px;
+  width: 200px;
 }
 /* include style
 ==================*/
