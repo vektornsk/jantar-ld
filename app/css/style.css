@@ -357,7 +357,7 @@ h1 {
 =====================*/
 .equipment {
   background: url(../images/cleaners.png) no-repeat center bottom, url(../images/bg-gray.png) no-repeat;
-  background-size: 100%;
+  background-size: 100%, cover;
 }
 .equipment .center {
   width: 27.08%;
@@ -494,7 +494,6 @@ h1 {
   padding-top: 16px;
   color: #fff;
   font-size: 18px;
-  font-family: 'GothamProLight', sans-serif;
   font-weight: 300;
 }
 .tel img {
@@ -503,6 +502,7 @@ h1 {
 }
 .tel span {
   vertical-align: middle;
+  font-family: 'GothamProLight', sans-serif;
 }
 @media (min-width: 768px) {
   .header {
@@ -527,13 +527,15 @@ h1 {
   left: 53px;
 }
 #nav li {
-  font-family: 'GothamProLight', sans-serif;
   margin-bottom: 20px;
 }
 #nav li a {
   color: #fff;
   font-size: 18px;
   line-height: 1.11;
+}
+#nav li a span {
+  font-family: 'GothamProLight', sans-serif;
 }
 /* media
 ==================*/
