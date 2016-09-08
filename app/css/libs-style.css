@@ -227,123 +227,120 @@ html.fp-enabled,
 .fp-responsive .fp-auto-height-responsive .fp-tableCell {
     height: auto !important;
 }
-*
+/* Slider */
+.slick-slider
 {
-	padding: 0px;
-	margin: 0px;
-	font-family: 'Open sans';
+    position: relative;
+
+    display: block;
+    box-sizing: border-box;
+
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+
+    -webkit-touch-callout: none;
+    -khtml-user-select: none;
+    -ms-touch-action: pan-y;
+        touch-action: pan-y;
+    -webkit-tap-highlight-color: transparent;
 }
 
-*:focus
+.slick-list
 {
-	outline: none;
+    position: relative;
+
+    display: block;
+    overflow: hidden;
+
+    margin: 0;
+    padding: 0;
+}
+.slick-list:focus
+{
+    outline: none;
+}
+.slick-list.dragging
+{
+    cursor: pointer;
+    cursor: hand;
 }
 
-a{
-	color: #666;
+.slick-slider .slick-track,
+.slick-slider .slick-list
+{
+    -webkit-transform: translate3d(0, 0, 0);
+       -moz-transform: translate3d(0, 0, 0);
+        -ms-transform: translate3d(0, 0, 0);
+         -o-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
 }
 
-/*======================
-	Selection Colour
-========================*/
+.slick-track
+{
+    position: relative;
+    top: 0;
+    left: 0;
 
+    display: block;
+}
+.slick-track:before,
+.slick-track:after
+{
+    display: table;
 
-body{
-	background: #eee;
+    content: '';
+}
+.slick-track:after
+{
+    clear: both;
+}
+.slick-loading .slick-track
+{
+    visibility: hidden;
 }
 
-#container{
-	background: #fff;
-	width: 800px;
-	padding: 30px;
-	min-height: 400px;
-	margin: 0 auto;
-	margin-top: 40px;
-	margin-bottom: 40px;
-	box-shadow:  1px 1px 3px 0px rgba(0, 0, 0, 0.3);
-	overflow: auto;
-}
+.slick-slide
+{
+    display: none;
+    float: left;
 
-p{
-	color: #444;
-	margin: 15px 0;
+    height: 100%;
+    min-height: 1px;
 }
+[dir='rtl'] .slick-slide
+{
+    float: right;
+}
+.slick-slide img
+{
+    display: block;
+}
+.slick-slide.slick-loading img
+{
+    display: none;
+}
+.slick-slide.dragging img
+{
+    pointer-events: none;
+}
+.slick-initialized .slick-slide
+{
+    display: block;
+}
+.slick-loading .slick-slide
+{
+    visibility: hidden;
+}
+.slick-vertical .slick-slide
+{
+    display: block;
 
-.scrollBox{
-	position: relative;
-	width: 400px;
-	height: 300px;
+    height: auto;
 
-	padding-right: 14px;
-	overflow: hidden;
+    border: 1px solid transparent;
 }
-.scrollbar{
-	position: absolute;
-	width: 6px;
-	height: 100%;
-	
-	right: 0;
+.slick-arrow.slick-hidden {
+    display: none;
 }
-.scrollDragger{
-	position: absolute;
-	background: #ccc;
-	width: 6px;
-	height: 30px;
-
-	cursor: pointer;
-	margin-left: -1px;
-	z-index: 2;
-}
-.scrollRail{
-	position: absolute;
-	background: #eee;
-	width: 4px;
-	height: 100%;
-	z-index: 1;
-}
-
-ul{
-	list-style: none;
-	margin: 0px;
-}
-
-.fadein{
-	display: block;
-	float: left;
-	margin-bottom: 15px;
-	color: #fff;
-	font: 40px Edmondsans;
-	text-align: center;
-	padding: 75px 0px;
-	width: 100%;
-	height: 50px;
-	background: #35c52e; /* Old browsers */
-	/* IE9 SVG, needs conditional override of 'filter' to 'none' */
-	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPHJhZGlhbEdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgY3g9IjUwJSIgY3k9IjUwJSIgcj0iNzUlIj4KICAgIDxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiMzNWM1MmUiIHN0b3Atb3BhY2l0eT0iMSIvPgogICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjMGI5ODMwIiBzdG9wLW9wYWNpdHk9IjEiLz4KICA8L3JhZGlhbEdyYWRpZW50PgogIDxyZWN0IHg9Ii01MCIgeT0iLTUwIiB3aWR0aD0iMTAxIiBoZWlnaHQ9IjEwMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
-	background: -moz-radial-gradient(center, ellipse cover,  #35c52e 0%, #0b9830 100%); /* FF3.6+ */
-	background: -webkit-radial-gradient(center, ellipse cover,  #35c52e 0%,#0b9830 100%); /* Chrome10+,Safari5.1+ */
-	background: -o-radial-gradient(center, ellipse cover,  #35c52e 0%,#0b9830 100%); /* Opera 12+ */
-	background: -ms-radial-gradient(center, ellipse cover,  #35c52e 0%,#0b9830 100%); /* IE10+ */
-	background: radial-gradient(ellipse at center,  #35c52e 0%,#0b9830 100%); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#35c52e', endColorstr='#0b9830',GradientType=1 ); /* IE6-8 fallback on horizontal gradient */
-}
-
-#flux_carousel li{
-	float: left;
-	margin-right: 15px;
-	margin-bottom: 15px;
-	width: 145px;
-	height: 145px;
-	background: #35c52e; /* Old browsers */
-}
-#flux_carousel ul:nth-child(2n+2) li{
-	background: #ccc;
-}
-
-.tab{
-	background: #108de4;
-	padding: 20px;
-	color: #eee;
-	border-radius: 5px;
-}
-

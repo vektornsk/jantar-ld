@@ -25,8 +25,6 @@ $(function() {
 			$mass.eq(i).css('opacity',(100 - (i-curIndex) * 10)/100 );
 		}
 	}
-
-	/*carusel*/
 	/*logo*/
 	function logo() {
 		if ($('.section.azc').hasClass('active') || $('.section.map-layout').hasClass('active')){
@@ -35,6 +33,16 @@ $(function() {
 			$('.logo__img').attr('src','/images/icons/logo.svg')
 		}
 	}
+	/*carousel*/
+	$('#carousel').slick({
+		infinite: true,
+	  slidesToShow: 3,
+	  slidesToScroll: 1,
+		arrows: false,
+		autoplay: true,
+		autoplaySpeed: 1000
+
+	});
 	/*map*/
 		var pos1 = new google.maps.LatLng(54.99579461, 82.96729642);
 		var pos2 = new google.maps.LatLng(55.01015989, 82.87607662);
