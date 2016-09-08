@@ -40,7 +40,15 @@ $(function() {
 	  slidesToScroll: 1,
 		arrows: false,
 		autoplay: true,
-		autoplaySpeed: 1000
+		autoplaySpeed: 1000,
+		responsive: [
+    {
+      breakpoint: 767,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll:1,
+      }
+		}]
 
 	});
 	/*map*/
