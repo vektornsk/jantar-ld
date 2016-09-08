@@ -3,21 +3,61 @@ $(function() {
 	$('#fullpage').fullpage({
 		anchors: ['s1', 's2', 's3', 's4', 's5', 's6', 's7', 's8', 's9'],
 		menu: '#nav',
-		afterLoad: function(){
+		afterLoad: function(menuanchor){
 			logo();
+			opacity(menuanchor);
 		}
 	});
+
 	/* list menu - opasity*/
-	
-	/*carusel*/
+	function opacity(menuanchor){
+		var
+		$nav = $('#nav'),
+		$mass = $('#nav').find('[data-menuanchor]'),
+		$currentEl = $nav.find('.active'),
+		curIndex = $currentEl.index();
+		$mass.css('opacity',1);
+
+		for(i=0;i<curIndex;i++){
+			$mass.eq(curIndex-i-1).css('opacity',(100 - (i+1) * 10)/100 );
+		}
+		for(i=curIndex+1;i<$mass.length;i++){
+			$mass.eq(i).css('opacity',(100 - (i-curIndex) * 10)/100 );
+		}
+	}
 	/*logo*/
 	function logo() {
-		if ($('.section.azc').hasClass('active')){
+		if ($('.section.azc').hasClass('active') || $('.section.map-layout').hasClass('active')){
 			$('.logo__img').attr('src','/images/icons/logo-black.svg')
 		}else {
 			$('.logo__img').attr('src','/images/icons/logo.svg')
 		}
 	}
+	/*carousel*/
+	$('#carousel').slick({
+		infinite: true,
+	  slidesToShow: 3,
+	  slidesToScroll: 1,
+		arrows: false,
+		autoplay: true,
+		autoplaySpeed: 1000,
+		responsive: [
+		{
+      breakpoint: 992,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 1,
+      }
+		},
+    {
+      breakpoint: 767,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+      }
+		}]
+
+	});
 	/*map*/
 		var pos1 = new google.maps.LatLng(54.99579461, 82.96729642);
 		var pos2 = new google.maps.LatLng(55.01015989, 82.87607662);
@@ -76,10 +116,54 @@ $(function() {
       title: 'проезд Энергетиков, 1',
       icon: mapImageAzs
 		});
-		var markerAzs3 = new google.maps.Marker({
+		var markerAzs4 = new google.maps.Marker({
 			position: pos7,
       map: map,
       title: 'Большевистская, 50',
       icon: mapImageAzs
 		});
+	/*tooltip*/
+		var infoWindow = new google.maps.InfoWindow({
+         content: 'улица Большевистская, 52/1'
+     });
+     google.maps.event.addListener(markerWash1, 'click', function () {
+         infoWindow.open(map, markerWash1);
+     });
+		var infoWindow2 = new google.maps.InfoWindow({
+        content: 'проезд Энергетиков, 1/1'
+      });
+    google.maps.event.addListener(markerWash2, 'click', function () {
+        infoWindow2.open(map, markerWash2);
+    });
+		var infoWindow3 = new google.maps.InfoWindow({
+        content: 'улица Военная, 8а'
+    });
+    google.maps.event.addListener(markerWash3, 'click', function () {
+        infoWindow3.open(map, markerWash3);
+    });
+		var infoWindow4 = new google.maps.InfoWindow({
+        content: 'улица Бродского, 1/1'
+    });
+    google.maps.event.addListener(markerAzs1, 'click', function () {
+        infoWindow4.open(map, markerAzs1);
+    });
+		var infoWindow5 = new google.maps.InfoWindow({
+        content: 'улица Нарымская, 100'
+    });
+    google.maps.event.addListener(markerAzs2, 'click', function () {
+        infoWindow5.open(map, markerAzs2);
+    });
+		var infoWindow6 = new google.maps.InfoWindow({
+        content: 'проезд Энергетиков, 1'
+    });
+    google.maps.event.addListener(markerAzs3, 'click', function () {
+        infoWindow6.open(map, markerAzs3);
+    });
+		var infoWindow7 = new google.maps.InfoWindow({
+        content: 'Большевистская, 50'
+    });
+    google.maps.event.addListener(markerAzs4, 'click', function () {
+        infoWindow7.open(map, markerAzs4);
+    });
+
 });
