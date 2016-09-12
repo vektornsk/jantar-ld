@@ -12,8 +12,9 @@
 .tel {
   padding-top: 16px;
   color: #fff;
-  font-size: 18px;  
+  font-size: 18px;
   font-weight: 300;
+  text-align: right;
   img {
     margin-top: -2px;
     margin-right: 15px;
@@ -22,6 +23,20 @@
     vertical-align: middle;
 	 font-family: @txt-GothaProLight;
   }
+}
+.tel-list {
+  text-align: right;
+  &__item {
+    font-family: @txt-GothaProMedium;
+    font-weight: 500;
+    margin-top: 20px;
+    div {
+      margin-top: 10px;
+      font-family: @txt-GothaProLight;
+      font-weight: 300;
+    }
+  }
+
 }
 
 @media (min-width: 768px) {

@@ -186,6 +186,10 @@ h1 {
 .right {
   float: right;
 }
+a {
+  color: #fff;
+  text-decoration: none;
+}
 /* button
 ===============*/
 .button-popup {
@@ -381,8 +385,47 @@ h1 {
 /* Wash
 ========================*/
 .wash .center {
-  width: 30.5%;
+  width: 55%;
   text-align: center;
+}
+.wash h1 {
+  margin-bottom: 60px;
+}
+.wash-carusel {
+  width: 100%;
+  margin: 40px auto 0;
+  color: #fff;
+  font-size: 18px;
+  line-height: 1.66;
+}
+.wash-carusel__item {
+  position: relative;
+  height: 300px;
+}
+.wash-carusel__text {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+.wash-carusel img {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  margin-bottom: 40px;
+}
+.wash-carusel .wash-loc {
+  font-family: 'GothamProMedium', sans-serif;
+  font-weight: 500;
+}
+.wash-carusel .wash-tel {
+  font-family: 'GothamProLight', sans-serif;
+  font-weight: 300;
 }
 /* Card
 =========================*/
@@ -521,6 +564,7 @@ h1 {
   color: #fff;
   font-size: 18px;
   font-weight: 300;
+  text-align: right;
 }
 .tel img {
   margin-top: -2px;
@@ -529,6 +573,19 @@ h1 {
 .tel span {
   vertical-align: middle;
   font-family: 'GothamProLight', sans-serif;
+}
+.tel-list {
+  text-align: right;
+}
+.tel-list__item {
+  font-family: 'GothamProMedium', sans-serif;
+  font-weight: 500;
+  margin-top: 20px;
+}
+.tel-list__item div {
+  margin-top: 10px;
+  font-family: 'GothamProLight', sans-serif;
+  font-weight: 300;
 }
 @media (min-width: 768px) {
   .header {
@@ -586,7 +643,7 @@ h1 {
     width: 35%;
   }
   .wash .center {
-    width: 35%;
+    width: 55%;
   }
   .web-layout img {
     width: 220px;
@@ -693,9 +750,8 @@ h1 {
     height: 30px;
   }
   .header .tel {
-    position: absolute;
-    top: 30px;
-    left: 0;
+    padding-top: 8px;
+    margin-right: 30px;
   }
   .header .tel img {
     width: 12px;
@@ -706,6 +762,17 @@ h1 {
   }
   .header .tel span span {
     display: none;
+  }
+  .header .tel-list {
+    display: none;
+    width: 102%;
+    padding: 5px;
+    background: rgba(0, 0, 0, 0.85);
+    margin-top: 10px;
+  }
+  .header .tel-list__item {
+    margin-top: 0;
+    margin-bottom: 20px;
   }
   .header .button-popup {
     width: 120px;
@@ -806,6 +873,13 @@ h1 {
   /*wash*/
   .wash .center {
     width: 95%;
+  }
+  .wash h1 {
+    margin-bottom: -20px;
+  }
+  .wash-carusel__text {
+    bottom: 40px;
+    font-size: 12px;
   }
   /*card*/
   .ambercard .center {

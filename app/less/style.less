@@ -34,6 +34,10 @@ h1 {
 .right {
 	float: right;
 }
+a {
+	color: #fff;
+	text-decoration: none;
+}
 /* button
 ===============*/
 .button-popup {
@@ -200,8 +204,43 @@ h1 {
 ========================*/
 .wash {
 	.center {
-		width: 30.5%;
+		width: 55%;
 		text-align: center;
+	}
+	h1 {
+		margin-bottom: 60px;
+	}
+}
+.wash-carusel {
+	width: 100%;
+	margin: 40px auto 0;
+	color: #fff;
+	font-size: 18px;
+	line-height: 1.66;
+	&__item {
+		position: relative;
+		height: 300px;
+	}
+	&__text {
+		position: absolute;
+		bottom: 0px;
+		width: 100%;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+	img {
+		position: absolute;
+		left: 50%;
+		transform: translateX(-50%);
+		margin-bottom: 40px;
+	}
+	.wash-loc {
+		font-family: @txt-GothaProMedium;
+		font-weight: 500;
+	}
+	.wash-tel {
+		font-family: @txt-GothaProLight;
+		font-weight: 300;
 	}
 }
 /* Card

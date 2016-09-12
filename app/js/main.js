@@ -6,6 +6,7 @@ $(function() {
 		afterLoad: function(menuanchor){
 			logo();
 			opacity(menuanchor);
+			telList();
 		}
 	});
 
@@ -23,6 +24,14 @@ $(function() {
 		}
 		for(i=curIndex+1;i<$mass.length;i++){
 			$mass.eq(i).css('opacity',(100 - (i-curIndex) * 10)/100 );
+		}
+	}
+	/* tel-list*/
+	function telList(){
+		if ($('.section.wash').hasClass('active')){
+			$('.tel').hide();
+		}else {
+			$('.tel').show();
 		}
 	}
 	/*logo*/
@@ -165,5 +174,27 @@ $(function() {
     google.maps.event.addListener(markerAzs4, 'click', function () {
         infoWindow7.open(map, markerAzs4);
     });
+/* tel button*/
+	function windowSize(){
+    if ($(window).width() <= '759'){
+			$('.tel').on('click', function(){
+				$(this).children(".tel-list").toggle()
+			});
+    }
+	}
+	$(window).on('load resize',windowSize);
+
+
+/*carusel wash*/
+	$('.wash-carusel').slick({
+
+		infinite: true,
+	  slidesToShow: 1,
+	  slidesToScroll: 1,
+		arrows: false,
+		autoplay: true,
+		autoplaySpeed: 1000,
+	});
+
 
 });
