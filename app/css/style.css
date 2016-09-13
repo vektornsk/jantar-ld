@@ -466,6 +466,9 @@ a {
 .web-layout .web .left p {
   margin-top: 50%;
 }
+.web-layout .web .right {
+  padding-right: 40px;
+}
 .web-layout .footer {
   position: absolute;
   width: 100%;
@@ -935,6 +938,9 @@ a {
 @media only screen and (max-height: 700px) {
   .arrowe {
     bottom: 30px;
+  }
+  .gzp {
+    bottom: 40px;
   }
 }
 @media only screen and (max-height: 600px) {

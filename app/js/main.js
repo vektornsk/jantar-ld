@@ -7,6 +7,7 @@ $(function() {
 			logo();
 			opacity(menuanchor);
 			telList();
+			colorTxtMap();
 		}
 	});
 
@@ -24,6 +25,18 @@ $(function() {
 		}
 		for(i=curIndex+1;i<$mass.length;i++){
 			$mass.eq(i).css('opacity',(100 - (i-curIndex) * 10)/100 );
+		}
+	}
+	/* txt-color map*/
+	function colorTxtMap() {
+		if ($('.map-layout').hasClass('active')){
+			$('#nav li a').css('color','#000');
+			$('.tel').css('color','#000');
+			$('.tel a').css('color','#000');
+		} else {
+			$('#nav li a').css('color','#fff');
+			$('.tel').css('color','#fff');
+			$('.tel a').css('color','#fff');
 		}
 	}
 	/* tel-list*/
@@ -67,7 +80,8 @@ $(function() {
 		}]
 
 	});
-	/*map*/
+	/*map google*/
+	/*
 		var pos1 = new google.maps.LatLng(54.99579461, 82.96729642);
 		var pos2 = new google.maps.LatLng(55.01015989, 82.87607662);
 		var pos3 = new google.maps.LatLng(55.03021591, 82.93790286);
@@ -131,7 +145,11 @@ $(function() {
       title: 'Большевистская, 50',
       icon: mapImageAzs
 		});
+	*/
+
+
 	/*tooltip*/
+	/*
 		var infoWindow = new google.maps.InfoWindow({
          content: 'улица Большевистская, 52/1'
      });
@@ -174,6 +192,71 @@ $(function() {
     google.maps.event.addListener(markerAzs4, 'click', function () {
         infoWindow7.open(map, markerAzs4);
     });
+/*
+
+/*map-yandex*/
+	var mapImageWash = '/images/icons/pin_wash.svg';
+	var mapImageAzs = '/images/icons/pin_azs.svg';
+	ymaps.ready(function () {
+		var myMap = new ymaps.Map('map', {
+						center: [55.0303526, 82.9357327],
+						zoom: 12
+		}),
+		wash1 = new ymaps.Placemark([54.99579461, 82.96729642], {
+				balloonContent: 'улица Большевистская, 52'
+		}, {
+				iconLayout: 'default#image',
+				iconImageHref: mapImageWash,
+		}),
+		wash2 = new ymaps.Placemark([55.010407, 82.8768759], {
+				balloonContent: 'проезд Энергетиков, 1/1'
+		}, {
+				iconLayout: 'default#image',
+				iconImageHref: mapImageWash,
+		}),
+		wash3 = new ymaps.Placemark([55.03021591, 82.93790286], {
+				balloonContent: 'Военная улица, 8А'
+		}, {
+				iconLayout: 'default#image',
+				iconImageHref: mapImageWash,
+		}),
+		azc1 = new ymaps.Placemark([55.05786761, 82.98089241], {
+				balloonContent: 'улица Бродского, 1/1'
+		}, {
+				iconLayout: 'default#image',
+				iconImageHref: mapImageAzs,
+		}),
+		azc2 = new ymaps.Placemark([55.050426, 82.899546], {
+				balloonContent: 'улица Нарымская, 100к1'
+		}, {
+				iconLayout: 'default#image',
+				iconImageHref: mapImageAzs,
+		}),
+		azc3 = new ymaps.Placemark([55.01015989, 82.87607662], {
+				balloonContent: 'проезд Энергетиков, 1'
+		}, {
+				iconLayout: 'default#image',
+				iconImageHref: mapImageAzs,
+				iconImageSize: [80, 60],
+				iconImageOffset: [-40, -60]
+		}),
+		azc4 = new ymaps.Placemark([54.99601814, 82.96658595], {
+				balloonContent: 'улица Большевистская, 50'
+		}, {
+				iconLayout: 'default#image',
+				iconImageHref: mapImageAzs,
+				iconImageSize: [80, 60],
+				iconImageOffset: [-40, -60]
+		});
+		myMap.behaviors.disable('scrollZoom');
+		myMap.geoObjects.add(azc1)
+										.add(azc2)
+										.add(azc3)
+										.add(azc4)
+										.add(wash1)
+										.add(wash2)
+										.add(wash3);
+	});
 /* tel button*/
 	function windowSize(){
     if ($(window).width() <= '759'){
