@@ -3,6 +3,7 @@ $(function() {
 	$('#fullpage').fullpage({
 		anchors: ['s1', 's2', 's3', 's4', 's5', 's6', 's7', 's8', 's9'],
 		menu: '#nav',
+		normalScrollElements: '#map',
 		afterLoad: function(menuanchor){
 			logo();
 			opacity(menuanchor);
@@ -200,6 +201,7 @@ $(function() {
 	ymaps.ready(function () {
 		var myMap = new ymaps.Map('map', {
 						center: [55.0303526, 82.9357327],
+						controls: [],
 						zoom: 12
 		}),
 		wash1 = new ymaps.Placemark([54.99579461, 82.96729642], {
@@ -249,6 +251,7 @@ $(function() {
 				iconImageOffset: [-40, -60]
 		});
 		myMap.behaviors.disable('scrollZoom');
+
 		myMap.geoObjects.add(azc1)
 										.add(azc2)
 										.add(azc3)
@@ -256,6 +259,12 @@ $(function() {
 										.add(wash1)
 										.add(wash2)
 										.add(wash3);
+		if ($(window).width() <= '759'){
+			myMap.behaviors.enable('scrollZoom');
+			console.log(1);
+		} else {
+			myMap.behaviors.disable('scrollZoom');
+		}
 	});
 /* tel button*/
 	function windowSize(){

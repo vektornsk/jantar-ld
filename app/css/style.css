@@ -152,6 +152,9 @@ input[type="search"]::-webkit-search-decoration {
   display: block;
   margin: auto;
 }
+body {
+  background: #000;
+}
 #wrapper {
   min-height: -webkit-calc(100vh - 50px);
   min-height: calc(100vh - 50px);
@@ -738,6 +741,9 @@ a {
     font-size: 14px;
     line-height: 1.5;
   }
+  #map {
+    padding-top: 60px;
+  }
   /*head*/
   .header {
     width: 100%;
@@ -762,6 +768,7 @@ a {
   }
   .header .tel span {
     font-size: 12px;
+    color: #fff;
   }
   .header .tel span span {
     display: none;
@@ -776,6 +783,12 @@ a {
   .header .tel-list__item {
     margin-top: 0;
     margin-bottom: 20px;
+  }
+  .header .tel-list a {
+    color: #fff !important;
+  }
+  .header .tel-list__item {
+    color: #fff;
   }
   .header .button-popup {
     width: 120px;
@@ -907,6 +920,9 @@ a {
   }
   .web img {
     width: 120px;
+  }
+  .web-layout .web .right {
+    padding-right: 0;
   }
   /*footer*/
   .web-layout .footer {
